@@ -1,6 +1,6 @@
 'use strict';
 
-crushtell.controller('mainController',
+crushtell.controller('setupController',
   ['$scope', '$http',
 	function ($scope, $http)
 {
@@ -45,4 +45,22 @@ crushtell.controller('mainController',
 		console.log(data);
 	});
 
+}]);
+
+crushtell.controller('crushesController',
+  ['$scope', '$http',
+	function ($scope, $http)
+{
+  // Initialize variables needed.
+  var crushes = $scope.crushes = [];
+
+  // Post PsetID. If exists, then set data. Otherwise, redirect to root.
+  $http.post('/getlistings', {crushId: $routeParams.crushId} )
+  .success(function (data) {
+    crushes = data;
+  })
+  .error(function (data) {
+    $location.path('/');
+    console.log('Server error: ' + data);
+  });
 }]);
