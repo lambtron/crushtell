@@ -1,4 +1,4 @@
-sutterbus.config( ['$routeProvider', '$locationProvider',
+crushtell.config( ['$routeProvider', '$locationProvider',
 function($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider.

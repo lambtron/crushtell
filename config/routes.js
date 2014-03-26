@@ -56,6 +56,7 @@ module.exports = function (app) {
 
           res.send(data, 200);
         });
+      });
     } else {
       Kimono.getListings(obj, function (err, data) {
         if (err)

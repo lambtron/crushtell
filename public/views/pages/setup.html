@@ -1,0 +1,78 @@
+<div class="container" style="width: 800px">
+	<br>
+	<div class="row">
+		<h1>Your own custom monitoring service for Craigslist's Missed Connections.</h1>
+	</div>
+	<br>
+	<div class="row">
+		<div>
+			Specify your direction:
+		</div>
+		<div>
+			<div class="checkbox">
+				<input type="checkbox"> w4m
+			</div>
+			<div class="checkbox">
+				<input type="checkbox"> m4w
+			</div>
+			<div class="checkbox">
+				<input type="checkbox"> w4w
+			</div>
+			<div class="checkbox">
+				<input type="checkbox"> m4m
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div>
+			How do you want your future partner to describe you?
+			<small><i>(separate by commas, please)</i></small>
+		</div>
+		<br>
+		<div>
+			<input class="form-control" type="text" placeholder="tall, dark, handsome">
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div>
+			In which neighborhoods can your crush find you?
+		</div>
+		<br>
+		<div>
+			<select ui-select2="filterNeighborhoods"
+								ng-model="test"
+								data-placeholder="Filter by Neighborhood"
+								class="pull-left filter"
+								multiple
+								style="width: 100%">
+				<option ng-repeat="neighborhood in allNeighborhoods"
+								value="{{neighborhood.name}}"
+								style="width: 30%">
+					{{neighborhood.name}}
+				</option>
+			</select>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div>
+			And your email, so you can be notified!
+		</div>
+		<br>
+		<div>
+			<input class="form-control" type="text" placeholder="tall, dark, handsome">
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="btn btn-primary">
+			Get your first Crushtell email!
+		</div>
+	</div>
+</div>

@@ -1,5 +1,3 @@
-// http://www.kimonolabs.com/api/53syy7p4?apikey=6849a5e4ffb39e325c8add25b1f5695c
-
 'use strict';
 
 (function() {
