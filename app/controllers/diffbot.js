@@ -37,7 +37,7 @@ module.exports = {
 
 		// Need to set the URL.
 		var craigslistUrl = 'http://sfbay.craigslist.org/search/mis?zoomToPosting=&catAbb=mis&query=' +
-												keywords + 
+												keywords +
 												'&minAsk=' + minAge +
 												'&maxAsk=' + maxAge +
 												neighborhoods +

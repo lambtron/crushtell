@@ -24,5 +24,25 @@ crushtell.controller('mainController',
 		}
 	};
 
+	// Obj
+  // .keywords: [w4m, m4w, white, beard, bearded, coffee, ..]
+  // .neighborhoods: [48, 112, ..]
+  // .maxAge: 35
+  // .minAge: 20
+	var obj = {
+		keywords: ['w4m'],
+		neighborhoods: [48],
+		maxAge: 35,
+		minAge: 28
+	};
+
+	$http.post('/getlistings', obj)
+	.success(function (data) {
+		console.log(data);
+	})
+	.error(function (data) {
+		console.log('Error:');
+		console.log(data);
+	});
 
 }]);
