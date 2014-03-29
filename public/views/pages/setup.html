@@ -8,18 +8,25 @@
 		<div>
 			Specify your direction:
 		</div>
+		<br>
 		<div>
-			<div class="checkbox">
-				<input type="checkbox"> w4m
+			<div style="float: left; width: 200px;">
+				I am a
+				<div class="checkbox">
+					<input type="checkbox" ng-model="user.gender" ng-true-value="m"> male
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" ng-model="user.gender" ng-true-value="f"> female
+				</div>
 			</div>
-			<div class="checkbox">
-				<input type="checkbox"> m4w
-			</div>
-			<div class="checkbox">
-				<input type="checkbox"> w4w
-			</div>
-			<div class="checkbox">
-				<input type="checkbox"> m4m
+			<div style="float: left">
+				and I am interested in
+				<div class="checkbox">
+					<input type="checkbox" ng-model="user.interestedInMen"> men
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" ng-model="user.interestedInWomen"> women
+				</div>
 			</div>
 		</div>
 	</div>
@@ -32,26 +39,26 @@
 		</div>
 		<br>
 		<div>
-			<input class="form-control" type="text" placeholder="tall, dark, handsome">
+			<input class="form-control" type="text" placeholder="tall, dark, handsome" ng-model="user.keywords">
 		</div>
 	</div>
 	<br>
 	<br>
 	<div class="row">
 		<div>
-			In which neighborhoods can your crush find you?
-			<small><i>Currently only available in the Bay Area!</i></small>
+			In which neighborhoods can your future partner find you?
+			<small><i>(currently only available in the Bay Area!)</i></small>
 		</div>
 		<br>
 		<div>
 			<select ui-select2="filterNeighborhoods"
-								ng-model="test"
-								data-placeholder="Filter by Neighborhood"
+								ng-model="user.neighborhoods"
+								data-placeholder="hayes valley, lower pac hts, soma"
 								class="pull-left filter"
 								multiple
 								style="width: 100%">
 				<option ng-repeat="neighborhood in allNeighborhoods"
-								value="{{neighborhood.name}}"
+								value="{{neighborhood.id}}"
 								style="width: 30%">
 					{{neighborhood.name}}
 				</option>
@@ -62,17 +69,36 @@
 	<br>
 	<div class="row">
 		<div>
-			And your email, so you can be notified!
+			This is an example of the email digest you would receive given your parameters.
 		</div>
-		<br>
-		<div>
-			<input class="form-control" type="text" placeholder="tall, dark, handsome">
+		<div class="well" style="margin: 10px 0px">
+			<ul>
+				<li ng-repeat="listing in user.results track by $index" style="line-height: 2em">
+					<a href="{{listing.Title.href}}">{{listing.Title.text}}</a>
+					<span ng-show="listing.Age.length > 0">Age: {{listing.Age}}</span>
+					<span ng-show="listing.Location.length > 0">{{listing.Location}}</span>
+				</li>
+			</ul>
+		</div>
+		<div class="btn btn-success" ng-click="user.getlistings()">
+			See your matches!
 		</div>
 	</div>
 	<br>
 	<br>
 	<div class="row">
-		<div class="btn btn-primary">
+		<div>
+			And your email, so you can be notified!
+		</div>
+		<br>
+		<div>
+			<input class="form-control" type="text" placeholder="you@example.com">
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="btn btn-primary" ng-click="user.submit()">
 			Get your first Crushtell email!
 		</div>
 	</div>

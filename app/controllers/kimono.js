@@ -49,6 +49,8 @@ module.exports = {
                         '&excats=' +
                         '';
 
+    console.log(craigslistUrl);
+
     var qs = {
       apikey: KIMONO_KEY,
       kimpath1: craigslistUrl
